@@ -4,9 +4,13 @@ import './style.css';
 
 interface Props {
   header: Config['header'];
+  cookiePolicy?: {
+    url: string;
+    label: string;
+  };
 }
 
-const Banner: FunctionalComponent<Props> = ({ header }) => {
+const Banner: FunctionalComponent<Props> = ({ header, cookiePolicy }) => {
   const keyExists = (key: keyof NonNullable<Config['header']>) => {
     return key in header;
   };

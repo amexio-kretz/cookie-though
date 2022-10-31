@@ -6,7 +6,6 @@ import { Config, CookieOption } from '../../types';
 interface Props {
   isOpen: boolean;
   options: CookieOption[];
-  cookiePolicy?: Config['cookiePolicy'];
   essentialLabel?: Config['essentialLabel'];
   onToggle: (key: number) => void;
 }
@@ -14,7 +13,6 @@ interface Props {
 const Options: FunctionalComponent<Props> = ({
   isOpen,
   options,
-  cookiePolicy,
   essentialLabel,
   onToggle,
 }) => {
@@ -31,13 +29,6 @@ const Options: FunctionalComponent<Props> = ({
   return (
     <div className="ct-policies">
       {cookies}
-      {cookiePolicy && (
-        <div className="ct-declaration">
-          <a tabIndex={0} href={cookiePolicy.url} role="link">
-            {cookiePolicy.label}
-          </a>
-        </div>
-      )}
     </div>
   );
 };
