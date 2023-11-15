@@ -19,6 +19,7 @@ The config object consists of (? means it's optional):
 * [essentialLabel?](#essentiallabel): string
 * [permissionLabels](#permissionlabels)
 * [cookiePreferenceKey?](#cookiepreferencekey): string
+* [cookiePreferenceExpires?](#cookiepreferenceexpires): number
 * [header](#header)
 * [customizeLabel](#customizelabel): string
 * [cookiePolicy?](#cookiepolicy)
@@ -54,6 +55,10 @@ The labels consist of:
 ### cookiePreferenceKey
 
 This is an an optional string that allows the developer to specify the name of the cookie that stores the user preferences.
+
+### cookiePreferenceExpires
+
+Set desired cookie expiration in month.
 
 ### header
 
@@ -117,6 +122,7 @@ eg. If you have docs.inthepocket.dev & inthepocket.dev. It could be relevant to 
     "decline": "Decline"
   },
   "cookiePreferenceKey": "cookie-preferences",
+  "cookiePreferenceExpires": "6",
   "header": {
       "title": "cookie though?",
       "subTitle": "You're probably fed up with these banners...",

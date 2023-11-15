@@ -87,6 +87,13 @@ const Customization: FunctionalComponent<Props> = ({
 
   return (
     <div>
+      {cookiePolicy && (
+        <div className="ct-declaration">
+          <a tabIndex={0} href={cookiePolicy.url} role="link">
+            {cookiePolicy.label}
+          </a>
+        </div>
+      )}
       <ToggleButton
         label={customizeLabel}
         isActive={isActive}
@@ -96,7 +103,6 @@ const Customization: FunctionalComponent<Props> = ({
         <Options
           isOpen={isActive}
           options={options}
-          cookiePolicy={cookiePolicy}
           essentialLabel={essentialLabel}
           onToggle={toggleOption}
         />

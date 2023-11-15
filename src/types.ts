@@ -31,6 +31,7 @@ export interface Config {
     decline: string;
   };
   cookiePreferenceKey?: string;
+  cookiePreferenceExpires?: number;
   header: {
     title?: string;
     subTitle?: string;

@@ -41,6 +41,7 @@ export const defaultPolicies: Policy[] = [
 
 const defaultConfig = {
   policies: defaultPolicies,
+  expires: 6,
   essentialLabel: 'Always on',
   header: {
     subTitle: "You're probably fed up with these banners...",

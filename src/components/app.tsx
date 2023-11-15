@@ -13,8 +13,8 @@ interface Props extends Config {
 }
 
 export const CONTAINER_WIDTHS = ['360px', '380px', '425px', '500px'];
-export const CONTAINER_BOTTOMS = ['-300px', '-350px', '-400px', '-500px'];
-export const MOBILE_CONTAINER_BOTTOMS = ['-400px', '-500px', '-650px'];
+export const CONTAINER_BOTTOMS = ['-350px', '-400px', '-450px', '-550px'];
+export const MOBILE_CONTAINER_BOTTOMS = ['-420px', '-525px', '-690px'];
 
 /**
  * Sets the width of the modal in case the user has a larger font size
@@ -71,6 +71,7 @@ const setModalWidth = () => {
 const App: FunctionalComponent<Props> = ({
   policies,
   cookiePreferenceKey,
+  cookiePreferenceExpires,
   header,
   customizeLabel,
   domain,
@@ -86,6 +87,7 @@ const App: FunctionalComponent<Props> = ({
     })),
     ee,
     cookiePreferenceKey,
+    cookiePreferenceExpires,
     domain,
   });
   const getCookieOptions = (): CookieOptions => {

@@ -6,6 +6,7 @@ export const COOKIE_PREFERENCES_CHANGED_EVENT = 'preferences_changed';
 
 interface Options {
   cookieOptions: CookiePreference[];
+  cookiePreferenceExpires?: number
   cookiePreferenceKey?: string;
   domain?: string;
   ee?: EventEmitter;
@@ -44,9 +45,9 @@ export const getCookie = (cookieKey: string) => {
   };
 };
 
-export const getNextYear = () => {
+export const getNextMonths = (offsetMonth: number) => {
   const now = new Date();
-  return new Date(now.setFullYear(now.getFullYear() + 1)).toUTCString();
+  return new Date(now.setMonth(now.getMonth() + offsetMonth)).toUTCString();
 };
 
 const policiesHaveChanged = (
@@ -102,10 +103,11 @@ const useCookie = ({
   cookieOptions,
   domain,
   cookiePreferenceKey = COOKIE_PREFERENCES_KEY,
+  cookiePreferenceExpires = 6,
   ee,
 }: Options) => {
   const setCookiePreferences = (cookiePreferences: CookiePreferences) => {
-    const expires = getNextYear();
+    const expires = getNextMonths(cookiePreferenceExpires);
     document.cookie = `${cookiePreferenceKey}=${formatToCookie(
       cookiePreferences.cookieOptions,
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
