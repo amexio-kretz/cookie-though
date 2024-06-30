@@ -21,7 +21,7 @@ const Banner: FunctionalComponent<Props> = ({ header, cookiePolicy }) => {
       <div className="ct-banner-intro">
         <div className="ct-banner-header">
           {keyExists('subTitle') && <p>{getValue('subTitle')}</p>}
-          {keyExists('title') && <h1>{getValue('title')}</h1>}
+          {keyExists('title') && getValue('title')} 
         </div>
         <div className="ct-banner-logo">
           <svg
